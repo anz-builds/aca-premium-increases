@@ -1,0 +1,7 @@
+aca_premium_increases:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: aca_premiums.duckdb
+      threads: 4

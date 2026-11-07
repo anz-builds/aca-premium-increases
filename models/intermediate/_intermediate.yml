@@ -1,0 +1,61 @@
+version: 2
+
+models:
+  - name: int_scope_plans
+    description: In-scope plans (individual market, medical, bronze/silver/gold) in states present in both years. One row per plan per year.
+    columns:
+      - name: plan_key
+        data_tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('int_scope_rates')
+                field: plan_key
+              description: Every in-scope plan has at least one age-40 price.
+
+  - name: int_scope_rates
+    description: Age-40, non-tobacco prices for in-scope plans. One row per plan, rating area and year.
+    columns:
+      - name: plan_area_key
+        data_tests: [unique, not_null]
+      - name: rate_age_40
+        data_tests: [not_null]
+
+  - name: int_plan_pairs
+    description: One row per matched plan pair (a 2026 plan and the 2027 plan that continues it), same plan only (crosswalk reason 0 or 1), both plans in scope.
+    columns:
+      - name: pair_key
+        data_tests: [unique, not_null]
+      - name: crosswalk_reason
+        description: Rule 3 business-rule test, only same-plan matches allowed.
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [0, 1]
+      - name: plan_key_2026
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('int_scope_plans')
+                field: plan_key
+      - name: plan_key_2027
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('int_scope_plans')
+                field: plan_key
+
+  - name: int_rate_changes
+    description: Age-40 price change for each matched plan pair in each rating area priced in both years. change_pct is a fraction (0.05 = 5%).
+    columns:
+      - name: pair_area_key
+        data_tests: [unique, not_null]
+      - name: pair_key
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('int_plan_pairs')
+                field: pair_key
+      - name: change_pct
+        data_tests: [not_null]

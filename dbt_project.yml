@@ -1,0 +1,9 @@
+name: aca_premium_increases
+version: "1.0.0"
+profile: aca_premium_increases
+model-paths: ["models"]
+test-paths: ["tests"]
+
+models:
+  aca_premium_increases:
+    +materialized: table

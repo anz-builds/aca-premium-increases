@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: stg_plans
+    description: One row per plan per year, with insurer, metal level and plan type.
+    columns:
+      - name: plan_key
+        data_tests: [unique, not_null]
+      - name: metal_level
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [Bronze, Silver, Gold, Platinum, Catastrophic, High, Low]
+    
+  - name: stg_rates
+    description: Age-40, non-tobacco price for each plan, rating area, rate start date and year.
+    columns:
+      - name: rate_key
+        data_tests: [unique, not_null]
+      - name: rate_age_40
+        description: Monthly premium in dollars. Blank means the raw price wasn't a number; checked for in-scope plans in step 4.5.
+    
+  - name: stg_crosswalk
+    description: One row per 2026 medical plan, 2027 plan and crosswalk reason, with the county-by-county repeats collapsed.
+    columns:
+      - name: plan_id_2026
+        data_tests: [not_null]
+      - name: crosswalk_reason
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [0, 1, 2, 3, 4, 5, 6, 7, 8, 10]

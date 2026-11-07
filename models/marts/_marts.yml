@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: plan_premium_changes
+    description: >
+      One row per 2027 plan that continues one or more 2026 plans (crosswalk
+      reasons 0 and 1). Age-40, non-tobacco price change, averaged across the
+      rating areas priced in both years. avg_change_pct is a fraction
+      (0.05 = 5%). Written to data/clean/plan_premium_changes.parquet.
+    columns:
+      - name: plan_id_2027
+        data_tests: [unique, not_null]
+      - name: metal_level
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['Bronze', 'Silver', 'Gold']
+      - name: avg_change_pct
+        data_tests: [not_null]

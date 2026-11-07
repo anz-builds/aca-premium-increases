@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: cms
+    description: CMS Exchange public use files, downloaded 2026-11-07. Read as text; staging models set the types.
+    tables:
+      - name: plan_attributes_2026
+        config:
+          external_location: "read_csv('data/raw/2026/plan-attributes-puf.csv', all_varchar = true)"
+      - name: plan_attributes_2027
+        config:
+          external_location: "read_csv('data/raw/2027/plan-attributes-puf.csv', all_varchar = true)"
+      - name: rate_2026
+        config:
+          external_location: "read_csv('data/raw/2026/rate-puf.csv', all_varchar = true)"
+      - name: rate_2027
+        config:
+          external_location: "read_csv('data/raw/2027/rate-puf.csv', all_varchar = true)"
+      - name: crosswalk_2027
+        config:
+          external_location: "read_csv('data/raw/2027/plan-id-crosswalk-puf.csv', all_varchar = true)"
