@@ -1,0 +1,46 @@
+name: dbt build
+
+# Reruns the whole project on GitHub's servers every time the code changes:
+# downloads the CMS files, runs every model and check (dbt build), then
+# prints the cleaning log, which stops with an error if any count doesn't add up.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install dbt
+        run: pip install -r requirements.txt
+
+      - name: Download the CMS files
+        run: |
+          for f in 2026/rate-puf 2026/plan-attributes-puf 2027/rate-puf 2027/plan-attributes-puf 2027/plan-id-crosswalk-puf; do
+            year="${f%%/*}"
+            mkdir -p "data/raw/$year"
+            curl -fsSL --retry 3 --retry-delay 5 -o /tmp/download.zip \
+              "https://download.cms.gov/marketplace-puf/$f.zip"
+            unzip -o -q /tmp/download.zip -d "data/raw/$year"
+          done
+          ls -la data/raw/2026 data/raw/2027
+
+      - name: Run every model and check
+        run: dbt build
+
+      - name: Print the cleaning log
+        run: python scripts/cleaning_log.py
