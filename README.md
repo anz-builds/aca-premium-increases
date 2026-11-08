@@ -1,6 +1,6 @@
 # ACA Marketplace Premium Changes, 2026 to 2027
 
-**[Live dashboard (Power BI)](https://app.powerbi.com/view?r=eyJrIjoiZGY5ODVmYmMtYmVhYi00MGMzLWJkMWUtZjBhZTdjODQwMmMwIiwidCI6IjVhMmZlNzJiLTQ4YWEtNGZlZi1hZTg3LTMzM2EzNGQ3ZjUwZCJ9)**
+**[Live dashboard (Power BI)](https://app.powerbi.com/view?r=eyJrIjoiZGY5ODVmYmMtYmVhYi00MGMzLWJkMWUtZjBhZTdjODQwMmMwIiwidCI6IjVhMmZlNzJiLTQ4YWEtNGZlZi1hZTg3LTMzM2EzNGQ3ZjUwZCJ9)** · **[dbt docs and lineage graph](https://aca-premium-increases.netlify.app)**
 
 Reviewing how much more the same ACA marketplace plans cost in 2027, and where, across the 29 states that use HealthCare.gov. Built with [CMS.gov](https://www.cms.gov/) public data, dbt and Power BI.
 
