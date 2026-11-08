@@ -5,17 +5,22 @@ sources:
     description: CMS Exchange public use files, downloaded 2026-11-07. Read as text; staging models set the types.
     tables:
       - name: plan_attributes_2026
+        description: "Plan Attributes file, plan year 2026 (CMS last updated Aug 4, 2026). One row per plan variant: the 14-character plan ID plus a variant code (-00 off-exchange, -01 on-exchange, -02 to -06 cost-sharing reduction versions), with insurer, metal level, plan type and market."
         config:
           external_location: "read_csv('data/raw/2026/plan-attributes-puf.csv', all_varchar = true)"
       - name: plan_attributes_2027
+        description: "Plan Attributes file, plan year 2027 (CMS last updated Oct 20, 2026). Same layout as the 2026 file: one row per plan variant with insurer, metal level, plan type and market."
         config:
           external_location: "read_csv('data/raw/2027/plan-attributes-puf.csv', all_varchar = true)"
       - name: rate_2026
+        description: "Rate file, plan year 2026 (CMS last updated Aug 4, 2026). One row per price: a plan (14-character plan ID), a rating area, an age band and a rate start date. IndividualRate is the non-tobacco monthly premium."
         config:
           external_location: "read_csv('data/raw/2026/rate-puf.csv', all_varchar = true)"
       - name: rate_2027
+        description: "Rate file, plan year 2027 (CMS last updated Oct 28, 2026). Same layout as the 2026 file: one row per plan, rating area, age band and rate start date."
         config:
           external_location: "read_csv('data/raw/2027/rate-puf.csv', all_varchar = true)"
       - name: crosswalk_2027
+        description: "2027 Plan ID Crosswalk (CMS last updated Sep 29, 2026). Says what happened to each 2026 plan in 2027, county by county or ZIP by ZIP: the 2027 plan its customers move to and a reason code (0 same plan and ID, 1 same plan with a new ID, 2 to 8 a different plan, product or insurer, 10 discontinued in a county left with no plan)."
         config:
           external_location: "read_csv('data/raw/2027/plan-id-crosswalk-puf.csv', all_varchar = true)"
