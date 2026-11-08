@@ -148,7 +148,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "The monthly premium for a 40-year-old who doesn't use tobacco, the standard yardstick for comparing marketplace prices.",
+                    "value": "The monthly premium for a 40-year-old who doesn't use tobacco, the profile KFF uses for marketplace premium figures.",
                     "textStyle": {
                       "fontFamily": "'Noto Sans', 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
                       "fontSize": "10pt",

@@ -4,7 +4,7 @@
 
 Reviewing how much more the same ACA marketplace plans cost in 2027, and where, across the 29 states that use HealthCare.gov. Built with [CMS.gov](https://www.cms.gov/) public data, dbt and Power BI.
 
-![Overview page: the median plan rose 13.8% and the average age-40 premium went from $677 to $775. State medians range from +4.5% in Arkansas to +25.6% in Arizona; metal levels and plan types differ by one to two points.](reports/figures/dashboard-overview.png)
+![Overview page: the median plan rose 13.8% and the average age-40 premium went from $677 to $775. State medians range from +4.5% in Arkansas to +25.6% in Arizona; metal levels differ by about 1 point and plan types by about 2.](reports/figures/dashboard-overview.png)
 
 ![Insurers page: all 140 insurers ranked by median plan change, with filters for state, metal level and plan type and a details table.](reports/figures/dashboard-insurers.png)
 
@@ -23,10 +23,10 @@ This project measures where prices for continuing plans rose. The data can't say
 - **Location matters far more than metal level or plan type:** State medians run from +4.5% (Arkansas) to +25.6% (Arizona), a 21-point spread. Metal levels differ by about 1 point (bronze +13.4%, silver +13.8%, gold +14.5%); POS plans rose least (+12.1%).
 - **UnitedHealthcare rose more than its state's median plan in 17 of its 19 states:** showing a median of +23.8% across 258 plans.
 	- *Filing check:* its own filings requested 34.81% in Kansas ([filing](https://ratereview.healthcare.gov/files-cjn/949687101_ks_94968_uhic_both_ind_partII_v01_070726.pdf)) and 30.46% in Oklahoma ([ACA Signups](https://acasignups.net/rate_changes/2027/ok)), close to the +32.9% and +30.4% medians here.
-- **Florida Blue's continuing plans show the biggest jumps:** 100 of the 103 single-area increases over 50% belong to Florida Blue's two companies. The main company's 11 continuing plans have a median of +38.4%, against a Florida median of +10.6%.
+- **Florida Blue's continuing plans show the biggest jumps:** 100 of the 103 rating-area price changes over 50% belong to Florida Blue's two companies. The main company's 11 continuing plans have a median of +38.4%, against a Florida median of +10.6%.
 	- *Filing check:* Florida's regulator reports enrollment-weighted averages of +18.8% for Blue Cross and Blue Shield of Florida and +9.5% for its Health Options HMO, and +10.4% statewide ([FLOIR](https://floir.gov/docs-sf/life-health-libraries/federal-health-insurance/2027-plan-year/aca-2027-web-tables_deliverable-part-1.pdf?Status=Master)). The +38.4% covers only plans that continue unchanged, not the company's whole book.
 - **88 plans (3.1%) got cheaper:** mostly from Blue Cross and Blue Shield of Oklahoma (24), Blue Cross and Blue Shield of Texas (17) and AvMed in Florida (10).
-	-  *Filing check:* BCBS of Oklahoma filed an average of −2.37% for its MyBlue HMO plans and +14.39% for its PPO plans ([BCBSOK](https://www.bcbsok.com/individual-family-health-insurance/rate-review)). BCBS of Texas and AvMed filed average increases ([BCBSTX](https://www.bcbstx.com/individual-family-health-insurance/rate-review), [FLOIR](https://floir.gov/docs-sf/life-health-libraries/federal-health-insurance/2027-plan-year/aca-2027-web-tables_deliverable-part-1.pdf?Status=Master)), so their cuts are specific plans.
+	-  *Filing check:* BCBS of Oklahoma filed an average of −2.37% for its MyBlue HMO plans and +14.39% for its PPO plans ([BCBSOK](https://www.bcbsok.com/ok/documents/individual/OK-rate-justification-increase-2027.pdf)). BCBS of Texas and AvMed filed average increases ([BCBSTX](https://www.bcbstx.com/tx/documents/individual/TX-rate-justification-increase-2027.pdf), [FLOIR](https://floir.gov/docs-sf/life-health-libraries/federal-health-insurance/2027-plan-year/aca-2027-web-tables_deliverable-part-1.pdf?Status=Master)), so their cuts are specific plans.
 - **Recommendation/Next Steps:** 
 	- Start a 2027 rate review with UnitedHealthcare's filings and Florida Blue's continuing plans. Both sit well above their states' medians, beyond what a market-wide factor would explain. 
 	- Individuals renewing plans in high-increase states or with these insurers have the most reason to compare plans before auto-renewing.
@@ -39,7 +39,7 @@ In the second year after the enhanced premium tax credits expired, where are the
 
 - **Source:** [CMS Exchange public use files](https://www.cms.gov/marketplace/resources/data/public-use-files) (Rate and Plan Attributes for 2026 and 2027; 2027 Plan ID Crosswalk), downloaded November 7, 2026.
 - **Coverage:** the 29 states on HealthCare.gov in both years (Oregon left for 2027).
-- **Price:** the monthly premium for a 40-year-old non-smoker, the yardstick [KFF](https://kff.org/f332bd2) uses.
+- **Price:** the monthly premium for a 40-year-old non-smoker, the profile [KFF](https://www.kff.org/affordable-care-act/9-things-to-watch-for-the-2027-aca-open-enrollment-period/) uses for its marketplace premium figures.
 - **Categories:** metal level (bronze, silver, gold) and plan type (HMO, PPO, EPO, POS).
 - **Final table:** `data/clean/plan_premium_changes.parquet`, which the dashboard reads from GitHub. 
 - **Grain: one row per 2027 plan that continues one or more 2026 plans** (key `plan_id_2027`, 2,847 rows), with state, insurer, metal level, plan type, predecessor plans, rating areas compared, average 2026 and 2027 premiums, and the change in dollars and percent.
@@ -82,7 +82,7 @@ Printed by `scripts/cleaning_log.py`, which stops with an error if any step does
 
 | Decision                                                            | Why                                                                                  |
 | ------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| Age-40, non-tobacco premium                                         | The standard comparison price; every plan in scope has one.                          |
+| Age-40, non-tobacco premium                                         | The profile KFF uses for marketplace premiums; every plan in scope has one.                          |
 | Same plan only (crosswalk reasons 0 and 1)                          | Other reasons move customers to a different plan, so the change isn't like for like. |
 | Average each plan's change across rating areas priced in both years | Each plan counts once.                                                               |
 | Average merged 2026 plans' prices in each rating area               | Each 2027 plan counts once (21 merges).                                              |
