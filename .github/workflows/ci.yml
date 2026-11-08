@@ -6,7 +6,7 @@ name: dbt build
 
 on:
   push:
-    branches: [main]
+    branches: [default]
   pull_request:
   workflow_dispatch:
 
