@@ -1,0 +1,274 @@
+table 'Plan Changes'
+	lineageTag: 1a9fc2a2-1135-4008-905e-9b58a97cb5c8
+
+	/// Number of 2027 plans compared.
+	measure Plans = COUNTROWS('Plan Changes')
+		formatString: #,0
+		lineageTag: 67e97805-caf4-45d3-8f7d-f1cd1c6085a6
+
+	/// Median plan-level change in the age-40 premium. Each plan counts once.
+	measure 'Median Change' = MEDIAN('Plan Changes'[Change (%)])
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: eefffaa0-029e-4354-884d-2aac13692bc1
+
+	/// Unweighted mean plan-level change in the age-40 premium.
+	measure 'Average Change' = AVERAGE('Plan Changes'[Change (%)])
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: 97925606-425f-440a-bb3c-f3111cf46731
+
+	/// A quarter of plans changed by less than this.
+	measure 'Change 25th Percentile' = PERCENTILE.INC('Plan Changes'[Change (%)], 0.25)
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: 9ee12cdc-7ca1-435b-93ea-be58184da1b7
+
+	/// Three quarters of plans changed by less than this.
+	measure 'Change 75th Percentile' = PERCENTILE.INC('Plan Changes'[Change (%)], 0.75)
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: 630d14c2-8ae9-496e-a440-7fcbe3dcb04d
+
+	/// Unweighted mean age-40 monthly premium in 2026.
+	measure 'Average Premium 2026' = AVERAGE('Plan Changes'[Premium 2026])
+		formatString: \$#,0
+		lineageTag: c7df1737-b679-437f-a6fa-93033daa6870
+
+	/// Unweighted mean age-40 monthly premium in 2027.
+	measure 'Average Premium 2027' = AVERAGE('Plan Changes'[Premium 2027])
+		formatString: \$#,0
+		lineageTag: 85bd7490-ca99-4263-a66c-5ca975031428
+
+	/// Unweighted mean change in the age-40 monthly premium, in dollars.
+	measure 'Average Change ($)' = AVERAGE('Plan Changes'[Change ($)])
+		formatString: +\$#,0;-\$#,0;\$0
+		lineageTag: 65d8c242-6a6e-4681-abae-4b28deb59986
+
+	/// Plans whose age-40 premium went down.
+	measure 'Plans With a Price Cut' = CALCULATE([Plans], 'Plan Changes'[Change (%)] < 0) + 0
+		formatString: #,0
+		lineageTag: f703d426-1740-49ca-9fe2-22da255ce919
+
+	/// Share of plans whose age-40 premium went down.
+	measure 'Share With a Price Cut' = DIVIDE([Plans With a Price Cut], [Plans])
+		formatString: 0.0%
+		lineageTag: 1f09dd90-2cbf-44d5-ab6a-8172083fedab
+
+	/// States with plans compared.
+	measure States = DISTINCTCOUNT('Plan Changes'[State])
+		formatString: #,0
+		lineageTag: f834fbe0-5c4e-4ba9-b299-08e1eec3c05f
+
+	/// Insurers, counted separately in each state.
+	measure Insurers = DISTINCTCOUNT('Plan Changes'[Insurer])
+		formatString: #,0
+		lineageTag: 6c3bb5b4-a635-4a9e-ab98-889973d8f97e
+
+	/// Card subtitle showing the middle half of plan changes.
+	measure 'Median Change Subtitle' = "Middle half of plans: " & FORMAT([Change 25th Percentile], "+0.0%") & " to " & FORMAT([Change 75th Percentile], "+0.0%")
+		lineageTag: 3b415d56-3b44-49ae-9d16-dc21e624be73
+
+	/// Card subtitle comparing the 2027 premium to 2026.
+	measure 'Premium Subtitle' = "Up from " & FORMAT([Average Premium 2026], "$#,0") & " in 2026 (" & FORMAT([Average Change ($)], "+$#,0;-$#,0") & " a month)"
+		lineageTag: a175782a-9ff2-4c6f-a9d1-b775c4ecb3b2
+
+	/// Card subtitle with the number of states and insurers.
+	measure 'Plans Subtitle' = "Across " & [States] & " states and " & [Insurers] & " insurers"
+		lineageTag: 7b12356e-b3af-42fa-ad60-a2ef23ce3144
+
+	/// Card subtitle with the share of plans that got cheaper.
+	measure 'Price Cut Subtitle' = FORMAT([Share With a Price Cut], "0.0%") & " of plans compared"
+		lineageTag: fba76774-4828-4317-a536-bc156e159234
+
+	column 'Plan ID'
+		dataType: string
+		lineageTag: 65fbbef4-0532-4da0-8453-5342d510735d
+		summarizeBy: none
+		sourceColumn: plan_id_2027
+
+		annotation SummarizationSetBy = User
+
+	column State
+		dataType: string
+		lineageTag: 6a92883a-6b3d-4b8a-acb5-dac956700c03
+		summarizeBy: none
+		sourceColumn: state
+
+		annotation SummarizationSetBy = User
+
+	column 'Insurer ID'
+		dataType: string
+		isHidden
+		lineageTag: 5530abd9-28dc-470c-bd69-42942f8a20c0
+		summarizeBy: none
+		sourceColumn: issuer_id
+
+		annotation SummarizationSetBy = User
+
+	column 'Insurer Name'
+		dataType: string
+		lineageTag: cebe6c6c-bdbd-4b79-aab7-20fe2842c0aa
+		summarizeBy: none
+		sourceColumn: issuer_name
+
+		annotation SummarizationSetBy = User
+
+	column Insurer
+		dataType: string
+		lineageTag: 977498e9-1d18-459f-957b-f98cd44265a8
+		summarizeBy: none
+		sourceColumn: insurer
+
+		annotation SummarizationSetBy = User
+
+	column 'Plan Name'
+		dataType: string
+		lineageTag: 15eb7ebf-81ee-4c22-89c8-81197afc1d94
+		summarizeBy: none
+		sourceColumn: plan_name
+
+		annotation SummarizationSetBy = User
+
+	column 'Metal Level'
+		dataType: string
+		lineageTag: 024a6230-9505-46f4-b0f9-eb3580c2d541
+		summarizeBy: none
+		sourceColumn: metal_level
+		sortByColumn: 'Metal Level Order'
+
+		annotation SummarizationSetBy = User
+
+	column 'Metal Level Order'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4791d59c-bfc1-4292-bff0-acfc143abef0
+		summarizeBy: none
+		sourceColumn: metal_level_order
+
+		annotation SummarizationSetBy = User
+
+	column 'Metal Level (CMS Label)'
+		dataType: string
+		lineageTag: de128772-1944-4c23-81b8-148d92ff04b1
+		summarizeBy: none
+		sourceColumn: metal_level_raw
+
+		annotation SummarizationSetBy = User
+
+	column 'Plan Type'
+		dataType: string
+		lineageTag: dd637737-4f5a-4c73-83d4-b5867b8e4770
+		summarizeBy: none
+		sourceColumn: plan_type
+
+		annotation SummarizationSetBy = User
+
+	column 'Predecessor Plans'
+		dataType: int64
+		formatString: 0
+		lineageTag: acea21be-b3a1-41be-bb04-85d5d9c083c7
+		summarizeBy: none
+		sourceColumn: predecessor_count
+
+		annotation SummarizationSetBy = User
+
+	column 'Predecessor Plan IDs'
+		dataType: string
+		lineageTag: c98a5d26-79b7-4bc2-b88c-8e509322b3b2
+		summarizeBy: none
+		sourceColumn: predecessor_plan_ids
+
+		annotation SummarizationSetBy = User
+
+	column 'Rating Areas'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2dbe1b3c-736f-48dc-8a6d-843a8b976bb6
+		summarizeBy: none
+		sourceColumn: rating_area_count
+
+		annotation SummarizationSetBy = User
+
+	column 'Premium 2026'
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: e83346d6-a3c9-4ce0-8ec2-d4bcbe1d5e70
+		summarizeBy: none
+		sourceColumn: avg_rate_2026
+
+		annotation SummarizationSetBy = User
+
+	column 'Premium 2027'
+		dataType: double
+		formatString: \$#,0.00
+		lineageTag: c37a0b4e-4261-4845-be69-073840c7175f
+		summarizeBy: none
+		sourceColumn: avg_rate_2027
+
+		annotation SummarizationSetBy = User
+
+	column 'Change ($)'
+		dataType: double
+		formatString: +\$#,0.00;-\$#,0.00;\$0.00
+		lineageTag: addf09fb-4f02-4eea-86a5-77b71cd9be5d
+		summarizeBy: none
+		sourceColumn: avg_change_dollars
+
+		annotation SummarizationSetBy = User
+
+	column 'Change (%)'
+		dataType: double
+		formatString: +0.0%;-0.0%;0.0%
+		lineageTag: 376b7b35-f6b2-4185-a284-39d235781c54
+		summarizeBy: none
+		sourceColumn: avg_change_pct
+
+		annotation SummarizationSetBy = User
+
+	column 'Change Band'
+		dataType: string
+		lineageTag: 9ec57272-c700-4dca-9f3c-1494eb0cfa86
+		summarizeBy: none
+		sourceColumn: change_band
+		sortByColumn: 'Change Band Start'
+
+		annotation SummarizationSetBy = User
+
+	column 'Change Band Start'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5a68d8dc-9db3-4a93-a29f-cb1e2fbd1806
+		summarizeBy: none
+		sourceColumn: change_band_start
+
+		annotation SummarizationSetBy = User
+
+	partition 'Plan Changes' = m
+		mode: import
+		source =
+				let
+				    // Final table from the dbt project: one row per 2027 plan (see the repo README)
+				    Source = Parquet.Document(Binary.Buffer(Web.Contents("https://raw.githubusercontent.com/anz-builds/aca-premium-increases/default/data/clean/plan_premium_changes.parquet"))),
+				    Typed = Table.TransformColumnTypes(Source, {
+				        {"plan_id_2027", type text}, {"state", type text}, {"issuer_id", type text},
+				        {"issuer_name", type text}, {"plan_name", type text}, {"metal_level", type text},
+				        {"metal_level_raw", type text}, {"plan_type", type text},
+				        {"predecessor_count", Int64.Type}, {"predecessor_plan_ids", type text},
+				        {"rating_area_count", Int64.Type}, {"avg_rate_2026", type number},
+				        {"avg_rate_2027", type number}, {"avg_change_dollars", type number},
+				        {"avg_change_pct", type number}}),
+				    // Insurers are grouped by name within each state (three Texas insurers file
+				    // under two CMS insurer IDs each)
+				    AddInsurer = Table.AddColumn(Typed, "insurer", each [state] & ": " & [issuer_name], type text),
+				    // Bronze, Silver, Gold sort order for charts
+				    AddMetalOrder = Table.AddColumn(AddInsurer, "metal_level_order",
+				        each if [metal_level] = "Bronze" then 1 else if [metal_level] = "Silver" then 2 else 3,
+				        Int64.Type),
+				    // 5-point bands of plan-level change for the spread chart
+				    AddBandStart = Table.AddColumn(AddMetalOrder, "change_band_start",
+				        each Number.RoundDown(Number.Round([avg_change_pct] * 100, 6) / 5) * 5, Int64.Type),
+				    Signed = (n as number) as text => (if n > 0 then "+" else "") & Text.From(n) & "%",
+				    AddBand = Table.AddColumn(AddBandStart, "change_band",
+				        each Signed([change_band_start]) & " to " & Signed([change_band_start] + 5), type text)
+				in
+				    AddBand
+

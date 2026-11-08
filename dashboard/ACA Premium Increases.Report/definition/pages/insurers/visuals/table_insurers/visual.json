@@ -1,0 +1,361 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.14.0/schema.json",
+  "name": "table_insurers",
+  "position": {
+    "x": 552,
+    "y": 184,
+    "z": 5000,
+    "height": 512,
+    "width": 704,
+    "tabOrder": 5000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Plan Changes"
+                    }
+                  },
+                  "Property": "Insurer"
+                }
+              },
+              "queryRef": "Plan Changes.Insurer",
+              "nativeQueryRef": "Insurer"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Plan Changes"
+                    }
+                  },
+                  "Property": "Plans"
+                }
+              },
+              "queryRef": "Plan Changes.Plans",
+              "nativeQueryRef": "Plans"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Plan Changes"
+                    }
+                  },
+                  "Property": "Average Premium 2026"
+                }
+              },
+              "queryRef": "Plan Changes.Average Premium 2026",
+              "nativeQueryRef": "Average Premium 2026"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Plan Changes"
+                    }
+                  },
+                  "Property": "Average Premium 2027"
+                }
+              },
+              "queryRef": "Plan Changes.Average Premium 2027",
+              "nativeQueryRef": "Average Premium 2027"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Plan Changes"
+                    }
+                  },
+                  "Property": "Median Change"
+                }
+              },
+              "queryRef": "Plan Changes.Median Change",
+              "nativeQueryRef": "Median Change"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Plan Changes"
+                    }
+                  },
+                  "Property": "Average Change"
+                }
+              },
+              "queryRef": "Plan Changes.Average Change",
+              "nativeQueryRef": "Average Change"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Plan Changes"
+                  }
+                },
+                "Property": "Median Change"
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "102.6040324874176D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Plan Changes.Average Premium 2026"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "109.21516781411866D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Plan Changes.Average Premium 2027"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "60.37055238664321D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Plan Changes.Median Change"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "61.505277134932264D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Plan Changes.Average Change"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "54.67236539178279D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Plan Changes.Plans"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "273.7812257341865D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "Plan Changes.Insurer"
+          }
+        }
+      ],
+      "columnHeaders": [
+        {
+          "properties": {}
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Insurer Details'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Sorted by median change; averages are unweighted'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Table of every insurer with its number of plans, average 2026 and 2027 age-40 premiums, and median and average plan change.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "83defe9f896ba9c2d22d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Plan Changes"
+              }
+            },
+            "Property": "Insurer"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "1d3de9c354557c03071d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Plan Changes"
+              }
+            },
+            "Property": "Plans"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1303e70361a5b03a795e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Plan Changes"
+              }
+            },
+            "Property": "Average Premium 2026"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "eb1ae017ca67e5be7097",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Plan Changes"
+              }
+            },
+            "Property": "Average Premium 2027"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "bc653978cdc899cc11dc",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Plan Changes"
+              }
+            },
+            "Property": "Median Change"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "96cc27a343bbea57e6c9",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Plan Changes"
+              }
+            },
+            "Property": "Average Change"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "ACA Premium Increases"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "e36e6f1d-7ec4-48ec-81e9-917029ffe1d9"
+  }
+}

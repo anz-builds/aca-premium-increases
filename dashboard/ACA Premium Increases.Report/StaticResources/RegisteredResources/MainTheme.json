@@ -1,0 +1,155 @@
+{
+  "name": "Main Theme",
+  "dataColors": [
+    "#9C3088",
+    "#DB8ACC",
+    "#6A2F64",
+    "#D161BB",
+    "#AC539F",
+    "#6E6E6E",
+    "#B3B3B3",
+    "#3F3F3F"
+  ],
+  "foreground": "#120811",
+  "foregroundNeutralSecondary": "#70436B",
+  "foregroundNeutralTertiary": "#A88AA3",
+  "background": "#FFFFFF",
+  "backgroundLight": "#F7EDF6",
+  "backgroundNeutral": "#EBCBE5",
+  "tableAccent": "#B8479F",
+  "hyperlink": "#944789",
+  "visitedHyperlink": "#944789",
+  "bad": "#F04242",
+  "textClasses": {
+    "callout": {
+      "fontSize": 24,
+      "fontFace": "'Noto Sans SemiBold', 'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif",
+      "color": "#120811"
+    },
+    "title": {
+      "fontSize": 12,
+      "fontFace": "'Noto Sans SemiBold', 'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif",
+      "color": "#120811"
+    },
+    "header": {
+      "fontSize": 12,
+      "fontFace": "'Noto Sans SemiBold', 'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif",
+      "color": "#120811"
+    },
+    "label": {
+      "fontSize": 10,
+      "fontFace": "'Noto Sans', 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+      "color": "#120811"
+    }
+  },
+  "visualStyles": {
+    "*": {
+      "*": {
+        "background": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#FFFFFF"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "border": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#EBCBE5"
+              }
+            },
+            "radius": 10,
+            "width": 1
+          }
+        ],
+        "dropShadow": [
+          {
+            "show": true,
+            "color": {
+              "solid": {
+                "color": "#000000"
+              }
+            },
+            "position": "Outer",
+            "preset": "Custom",
+            "shadowBlur": 3,
+            "shadowDistance": 1,
+            "shadowSpread": 0,
+            "angle": 90,
+            "transparency": 90
+          }
+        ],
+        "padding": [
+          {
+            "top": 12,
+            "bottom": 12,
+            "left": 12,
+            "right": 12
+          }
+        ],
+        "title": [
+          {
+            "show": true,
+            "fontColor": {
+              "solid": {
+                "color": "#120811"
+              }
+            },
+            "fontSize": 12,
+            "bold": true
+          }
+        ],
+        "subTitle": [
+          {
+            "fontColor": {
+              "solid": {
+                "color": "#70436B"
+              }
+            },
+            "fontSize": 10
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": {
+              "solid": {
+                "color": "#FDF8FC"
+              }
+            },
+            "transparency": 0
+          }
+        ],
+        "outspace": [
+          {
+            "color": {
+              "solid": {
+                "color": "#F7EDF6"
+              }
+            },
+            "transparency": 0
+          }
+        ]
+      }
+    },
+    "lineChart": {
+      "*": {
+        "lineStyles": [
+          {
+            "lineChartType": "linear",
+            "showMarker": true
+          }
+        ]
+      }
+    }
+  }
+}

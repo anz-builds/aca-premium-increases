@@ -1,0 +1,195 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "notes_data",
+  "position": {
+    "x": 24,
+    "y": 104,
+    "z": 1000,
+    "height": 592,
+    "width": 600,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Question",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans SemiBold', 'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif",
+                      "fontSize": "12pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Which insurers and states are raising ACA marketplace premiums most for 2027 compared with 2026, and how do increases differ by metal level and plan type?",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans', 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+                      "fontSize": "10pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Data",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans SemiBold', 'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif",
+                      "fontSize": "12pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "CMS Exchange public use files: Rate, Plan Attributes and the 2027 Plan ID Crosswalk, downloaded November 7, 2026.",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans', 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+                      "fontSize": "10pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Covers the 29 states that use HealthCare.gov in both years. Oregon left HealthCare.gov for 2027, so it isn't included.",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans', 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+                      "fontSize": "10pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Which plans",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans SemiBold', 'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif",
+                      "fontSize": "12pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Individual-market medical plans at the bronze, silver and gold levels. Expanded bronze plans count as bronze.",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans', 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+                      "fontSize": "10pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Only plans that continue into 2027 as the same plan (crosswalk reasons 0 and 1): 2,847 plans in 2027.",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans', 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+                      "fontSize": "10pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Price compared",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans SemiBold', 'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif",
+                      "fontSize": "12pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "The monthly premium for a 40-year-old who doesn't use tobacco, the standard yardstick for comparing marketplace prices.",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans', 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+                      "fontSize": "10pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Question. Which insurers and states are raising ACA marketplace premiums most for 2027 compared with 2026, and how do increases differ by metal level and plan type? Data. CMS Exchange public use files: Rate, Plan Attributes and the 2027 Plan ID Crosswalk, downloaded November 7, 2026. Covers the 29 states that use HealthCare.gov in both years. Oregon left HealthCare.gov for 2027, so it isn''t included. Which plans. Individual-market medical plans at the bronze, silver and gold levels. Expanded bronze plans count as bronze. Only plans that continue into 2027 as the same plan (crosswalk reasons 0 and 1): 2,847 plans in 2027. Price compared. The monthly premium for a 40-year-old who doesn''t use tobacco, the standard yardstick for comparing marketplace prices.'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

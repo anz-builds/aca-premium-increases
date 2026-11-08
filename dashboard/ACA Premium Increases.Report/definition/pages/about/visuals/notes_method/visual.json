@@ -1,0 +1,219 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.7.0/schema.json",
+  "name": "notes_method",
+  "position": {
+    "x": 656,
+    "y": 104,
+    "z": 2000,
+    "height": 592,
+    "width": 600,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "How a plan's change is measured",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans SemiBold', 'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif",
+                      "fontSize": "12pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "A plan can charge a different price in each rating area (a region of a state). Each plan's change is the average of its changes across the rating areas priced in both years.",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans', 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+                      "fontSize": "10pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Where two or more 2026 plans merged into one 2027 plan, their 2026 prices are averaged in each rating area.",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans', 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+                      "fontSize": "10pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Medians and averages",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans SemiBold', 'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif",
+                      "fontSize": "12pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Every plan counts once. The files don't say how many people bought each plan, so these are unweighted figures, not what the average customer pays.",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans', 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+                      "fontSize": "10pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Insurers are grouped by name within each state. Three Texas insurers file under two CMS insurer IDs each and are combined.",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans', 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+                      "fontSize": "10pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "What this leaves out",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans SemiBold', 'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif",
+                      "fontSize": "12pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Full list prices only: the files don't include subsidies (premium tax credits).",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans', 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+                      "fontSize": "10pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "States that run their own marketplace, such as California and New York.",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans', 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+                      "fontSize": "10pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "CMS notes the 2027 files may differ from what HealthCare.gov shows.",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans', 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+                      "fontSize": "10pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Code and data",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans SemiBold', 'Segoe UI Semibold', wf_segoe-ui_semibold, helvetica, arial, sans-serif",
+                      "fontSize": "12pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "github.com/anz-builds/aca-premium-increases (dbt with DuckDB; the final table is data/clean/plan_premium_changes.parquet).",
+                    "textStyle": {
+                      "fontFamily": "'Noto Sans', 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
+                      "fontSize": "10pt",
+                      "color": "#120811"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "general": [
+        {
+          "properties": {
+            "altText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'How a plan''s change is measured. A plan can charge a different price in each rating area (a region of a state). Each plan''s change is the average of its changes across the rating areas priced in both years. Where two or more 2026 plans merged into one 2027 plan, their 2026 prices are averaged in each rating area. Medians and averages. Every plan counts once. The files don''t say how many people bought each plan, so these are unweighted figures, not what the average customer pays. Insurers are grouped by name within each state. Three Texas insurers file under two CMS insurer IDs each and are combined. What this leaves out. Full list prices only: the files don''t include subsidies (premium tax credits). States that run their own marketplace, such as California and New York. CMS notes the 2027 files may differ from what HealthCare.gov shows. Code and data. github.com/anz-builds/aca-premium-increases (dbt with DuckDB; the final table is data/clean/plan_premium_changes.parquet).'"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
