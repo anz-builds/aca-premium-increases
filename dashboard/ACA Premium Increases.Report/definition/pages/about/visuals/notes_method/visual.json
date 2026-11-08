@@ -206,7 +206,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'How a plan''s change is measured. A plan can charge a different price in each rating area (a region of a state). Each plan''s change is the average of its changes across the rating areas priced in both years. Where two or more 2026 plans merged into one 2027 plan, their 2026 prices are averaged in each rating area. Medians and averages. Every plan counts once. The files don''t say how many people bought each plan, so these are unweighted figures, not what the average customer pays. Insurers are grouped by name within each state. Three Texas insurers file under two CMS insurer IDs each and are combined. What this leaves out. Full list prices only: the files don''t include subsidies (premium tax credits). States that run their own marketplace, such as California and New York. CMS notes the 2027 files may differ from what HealthCare.gov shows. Code and data. github.com/anz-builds/aca-premium-increases (dbt with DuckDB; the final table is data/clean/plan_premium_changes.parquet).'"
+                  "Value": "'Notes on how each plan''s change is measured (averaged across rating areas priced in both years), why the figures are unweighted, how insurers are grouped, what the numbers leave out, and where the code lives.'"
                 }
               }
             }

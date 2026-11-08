@@ -31,7 +31,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Which insurers and states are raising ACA marketplace premiums most for 2027 compared with 2026, and how do increases differ by metal level and plan type?",
+                    "value": "In the second year after the enhanced premium tax credits expired, where are the same plans' premiums rising most, and how does that differ by insurer, metal level and plan type?",
                     "textStyle": {
                       "fontFamily": "'Noto Sans', 'Segoe UI', wf_segoe-ui_normal, helvetica, arial, sans-serif",
                       "fontSize": "10pt",
@@ -182,7 +182,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Question. Which insurers and states are raising ACA marketplace premiums most for 2027 compared with 2026, and how do increases differ by metal level and plan type? Data. CMS Exchange public use files: Rate, Plan Attributes and the 2027 Plan ID Crosswalk, downloaded November 7, 2026. Covers the 29 states that use HealthCare.gov in both years. Oregon left HealthCare.gov for 2027, so it isn''t included. Which plans. Individual-market medical plans at the bronze, silver and gold levels. Expanded bronze plans count as bronze. Only plans that continue into 2027 as the same plan (crosswalk reasons 0 and 1): 2,847 plans in 2027. Price compared. The monthly premium for a 40-year-old who doesn''t use tobacco, the standard yardstick for comparing marketplace prices.'"
+                  "Value": "'Notes on the question, the data (CMS public use files for the 29 HealthCare.gov states, downloaded November 7, 2026), which plans are included, and the price compared: age 40, non-tobacco.'"
                 }
               }
             }

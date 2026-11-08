@@ -4,7 +4,7 @@
 
 Reviewing how much more the same ACA marketplace plans cost in 2027, and where, across the 29 states that use HealthCare.gov. Built with [CMS.gov](https://www.cms.gov/) public data, dbt and Power BI.
 
-![Overview page: the median plan rose 13.8% and the average age-40 premium went from $677 to $775. State medians range from +4.6% in Arkansas to +25.6% in Arizona; metal levels and plan types differ by one to two points.](reports/figures/dashboard-overview.png)
+![Overview page: the median plan rose 13.8% and the average age-40 premium went from $677 to $775. State medians range from +4.5% in Arkansas to +25.6% in Arizona; metal levels and plan types differ by one to two points.](reports/figures/dashboard-overview.png)
 
 ![Insurers page: all 140 insurers ranked by median plan change, with filters for state, metal level and plan type and a details table.](reports/figures/dashboard-insurers.png)
 
@@ -20,9 +20,9 @@ This project measures where prices for continuing plans rose. The data can't say
 
 - **The same plans cost a median 13.8% more in 2027:** Half rose between 9.0% and 19.3%; the average age-40 premium went from $677 to $775 a month.
 	- *Filing check:* KFF reports benchmark silver premiums up 11% in HealthCare.gov states, a narrower measure than this one ([KFF](https://www.kff.org/affordable-care-act/9-things-to-watch-for-the-2027-aca-open-enrollment-period/)).
-- **Location matters far more than metal level or plan type:** State medians run from +4.6% (Arkansas) to +25.6% (Arizona), a 21-point spread. Metal levels differ by about 1 point (bronze +13.4%, silver +13.8%, gold +14.5%); POS plans rose least (+12.1%).
-- **UnitedHealthcare rose more than the typical plan in 18 of its 19 states:** showing a median of +23.8% across 258 plans.
-	- *Filing check:* its own filings requested 34.81% in Kansas ([filing](https://ratereview.healthcare.gov/files-cjn/949687101_ks_94968_uhic_both_ind_partII_v01_070726.pdf)) and 30.46% in Oklahoma ([ACA Signups](https://acasignups.net/rate_changes/2027/ok)), close to the +33.0% and +30.4% medians here.
+- **Location matters far more than metal level or plan type:** State medians run from +4.5% (Arkansas) to +25.6% (Arizona), a 21-point spread. Metal levels differ by about 1 point (bronze +13.4%, silver +13.8%, gold +14.5%); POS plans rose least (+12.1%).
+- **UnitedHealthcare rose more than its state's median plan in 17 of its 19 states:** showing a median of +23.8% across 258 plans.
+	- *Filing check:* its own filings requested 34.81% in Kansas ([filing](https://ratereview.healthcare.gov/files-cjn/949687101_ks_94968_uhic_both_ind_partII_v01_070726.pdf)) and 30.46% in Oklahoma ([ACA Signups](https://acasignups.net/rate_changes/2027/ok)), close to the +32.9% and +30.4% medians here.
 - **Florida Blue's continuing plans show the biggest jumps:** 100 of the 103 single-area increases over 50% belong to Florida Blue's two companies. The main company's 11 continuing plans have a median of +38.4%, against a Florida median of +10.6%.
 	- *Filing check:* Florida's regulator reports enrollment-weighted averages of +18.8% for Blue Cross and Blue Shield of Florida and +9.5% for its Health Options HMO, and +10.4% statewide ([FLOIR](https://floir.gov/docs-sf/life-health-libraries/federal-health-insurance/2027-plan-year/aca-2027-web-tables_deliverable-part-1.pdf?Status=Master)). The +38.4% covers only plans that continue unchanged, not the company's whole book.
 - **88 plans (3.1%) got cheaper:** mostly from Blue Cross and Blue Shield of Oklahoma (24), Blue Cross and Blue Shield of Texas (17) and AvMed in Florida (10).

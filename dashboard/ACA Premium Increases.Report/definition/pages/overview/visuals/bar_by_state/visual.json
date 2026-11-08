@@ -216,7 +216,7 @@
             "altText": {
               "expr": {
                 "Literal": {
-                  "Value": "'Bar chart of the median plan change in each of 29 states. Arizona is highest at +25.6%, then South Carolina at +23.9%. Arkansas is lowest at +4.6%.'"
+                  "Value": "'Bar chart of the median plan change in each of 29 states. Arizona is highest at +25.6%, then South Carolina at +23.9%. Arkansas is lowest at +4.5%.'"
                 }
               }
             }
